@@ -1,3 +1,53 @@
+<style>
+  nav {
+    background-color: var(--G-brand-bg-color);
+    font-family: var(--G-brand-font-family);
+    font-size: var(--G-p1-font-size);
+    color: var(--G-brand-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    color: var(--G-brand-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  .logo {
+    height: 40px;
+    margin-right: 20px;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu-links {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .menu-links a {
+      margin: 10px 0;
+    }
+  }
+</style>
 <nav style="background-color: #040016; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
   <a href="https://balticsummit.pl/">
     <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" style="height: 50px;" />
