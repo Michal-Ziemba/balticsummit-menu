@@ -1,9 +1,21 @@
+<nav class="baltic-menu">
+  <a href="https://balticsummit.pl/">
+    <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" class="baltic-logo" />
+  </a>
+  <ul class="menu-links">
+    <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
+    <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
+    <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
+    <li><a href="https://balticsummit.pl/volunteers2025">Volunteers</a></li>
+  </ul>
+</nav>
+
 <style>
-  nav {
-    background-color: #ecfaff; /* Light background */
-    font-family: 'Inter', sans-serif; /* MailerLite default font */
+  .baltic-menu {
+    background-color: #ecfaff;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
-    color: #1C3144; /* Dark text */
+    color: #1C3144;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,30 +24,31 @@
     border-bottom: 1px solid #1C3144;
   }
 
-  nav a {
-    color: #1C3144;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  .logo {
-    height: 40px;
+  .baltic-logo {
+    height: 50px;
     margin-right: 20px;
   }
 
   .menu-links {
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-links a {
+    color: #1C3144;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .menu-links a:hover {
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {
-    nav {
+    .baltic-menu {
       flex-direction: column;
       align-items: flex-start;
     }
@@ -49,15 +62,3 @@
     }
   }
 </style>
-
-<nav style="background-color: #040016; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-  <a href="https://balticsummit.pl/">
-    <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" style="height: 50px;" />
-  </a>
-  <ul style="list-style: none; display: flex; gap: 20px; margin: 0; padding: 0; font-size: 16px;">
-    <li><a href="https://balticsummit.pl/speakers2025" style="color: white; text-decoration: none;">Speakers</a></li>
-    <li><a href="https://balticsummit.pl/sessions2025" style="color: white; text-decoration: none;">Workshops & Sessions</a></li>
-    <li><a href="https://balticsummit.pl/sponsors2025" style="color: white; text-decoration: none;">Sponsors & Partners</a></li>
-    <li><a href="https://balticsummit.pl/volunteers2025" style="color: white; text-decoration: none;">Volunteers</a></li>
-  </ul>
-</nav>
