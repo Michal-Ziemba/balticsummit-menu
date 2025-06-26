@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    .baltic-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background-color: #ecfaff;
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      color: #1C3144;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #1C3144;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .baltic-logo {
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 30px;
+      background: none;
+      border: none;
+      color: #1C3144;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      list-style: none;
+      display: flex;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    .menu-links li {
+      padding: 0 24px;
+      border-left: 1px solid #1C3144;
+      text-align: center;
+    }
+
+    .menu-links li:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .menu-links a {
+      color: #1C3144;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .menu-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+        background-color: #ecfaff;
+      }
+
+      .menu-links.open {
+        display: flex;
+      }
+
+      .menu-links li {
+        border-left: none;
+        border-top: 1px solid #1C3144;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .menu-links li:first-child {
+        border-top: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="baltic-menu">
+    <a href="https://balticsummit.pl/">
+      <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" class="baltic-logo" />
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="menu-links">
+      <li><a href="https://balticsummit.pl/about2025">About</a></li>
+      <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
+      <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
+      <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
+      <li><a href="https://balticsummit.pl/volunteers2025">Volunteers</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu-links').classList.toggle('open');
+    }
+
+    // Add top spacer to page body to prevent overlap
+    document.addEventListener('DOMContentLoaded', function () {
+      const spacer = document.createElement('div');
+      spacer.style.height = '90px';
+      document.body.insertBefore(spacer, document.body.firstChild);
+    });
+  </script>
+</body>
+</html>
