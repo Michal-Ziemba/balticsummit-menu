@@ -3,9 +3,14 @@
     <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" class="baltic-logo" />
   </a>
   <ul class="menu-links">
+    <li><a href="https://balticsummit.pl/about2025">About</a></li>
+    <li>|</li>
     <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
+    <li>|</li>
     <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
+    <li>|</li>
     <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
+    <li>|</li>
     <li><a href="https://balticsummit.pl/volunteers2025">Volunteers</a></li>
   </ul>
 </nav>
@@ -32,7 +37,13 @@
   .menu-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  .menu-links li {
     margin: 0;
     padding: 0;
   }
@@ -52,13 +63,19 @@
       flex-direction: column;
       align-items: flex-start;
     }
+
     .menu-links {
       flex-direction: column;
-      width: 100%;
+      gap: 10px;
       margin-top: 10px;
     }
-    .menu-links a {
-      margin: 10px 0;
+
+    .menu-links li {
+      text-align: left;
+    }
+
+    .menu-links li::before {
+      content: none;
     }
   }
 </style>
