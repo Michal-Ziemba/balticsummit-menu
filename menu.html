@@ -13,6 +13,11 @@
 
 <style>
   .baltic-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
     background-color: #ecfaff;
     font-family: 'Inter', sans-serif;
     font-size: 22px;
@@ -23,6 +28,7 @@
     padding: 20px;
     flex-wrap: wrap;
     border-bottom: 1px solid #1C3144;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   }
 
   .baltic-logo {
@@ -68,6 +74,7 @@
 
     .menu-links {
       flex-direction: column;
+      width: 100%;
     }
 
     .menu-links li {
@@ -83,3 +90,4 @@
     }
   }
 </style>
+
