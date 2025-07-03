@@ -50,6 +50,13 @@
       cursor: pointer;
     }
 
+    .menu-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
     .menu-links {
       list-style: none;
       display: flex;
@@ -80,9 +87,29 @@
       text-decoration: underline;
     }
 
+    .register-button {
+      background-color: #1C3144;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .register-button:hover {
+      background-color: #12212f;
+    }
+
     @media (max-width: 768px) {
       .menu-toggle {
         display: block;
+      }
+
+      .menu-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
       }
 
       .menu-links {
@@ -108,6 +135,10 @@
       .menu-links li:first-child {
         border-top: none;
       }
+
+      .register-button {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
@@ -118,13 +149,16 @@
       <h1 class="logo-text">Baltic Summit 2025</h1>
     </a>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul class="menu-links">
-      <li><a href="https://balticsummit.pl/">About</a></li>
-      <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
-      <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
-      <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
-      <li><a href="https://dashboard.mailerlite.com/forms/518224/94575616198706627/share">Volunteers</a></li>
-    </ul>
+    <div class="menu-container">
+      <ul class="menu-links">
+        <li><a href="https://balticsummit.pl/">About</a></li>
+        <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
+        <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
+        <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
+        <li><a href="https://dashboard.mailerlite.com/forms/518224/94575616198706627/share">Volunteers</a></li>
+      </ul>
+      <a class="register-button" href="https://balticsummit.pl/tickets2025">Register</a>
+    </div>
   </nav>
 
   <script>
