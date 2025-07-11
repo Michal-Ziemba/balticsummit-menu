@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Fixed top bar */
     .baltic-menu {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 9999;
       background-color: #ecfaff;
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      color: #1C3144;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 20px;
+      padding: 20px;
+      flex-wrap: wrap;
       border-bottom: 1px solid #1C3144;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
@@ -40,6 +37,7 @@
     .logo-text {
       font-weight: 700;
       font-size: 1.5rem;
+      user-select: none;
       margin: 0;
     }
 
@@ -52,35 +50,31 @@
       cursor: pointer;
     }
 
-    .menu-dropdown {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-      margin-top: 90px; /* height of fixed bar + margin */
-    }
-
     .menu-container {
       display: flex;
       align-items: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .menu-links {
       list-style: none;
       display: flex;
+      gap: 0;
       margin: 0;
       padding: 0;
-      gap: 0;
+      align-items: center;
     }
 
     .menu-links li {
       padding: 0 24px;
       border-left: 1px solid #1C3144;
+      text-align: center;
     }
 
     .menu-links li:first-child {
       border-left: none;
+      padding-left: 0;
     }
 
     .menu-links a {
@@ -107,33 +101,30 @@
       background-color: #12212f;
     }
 
-    /* Mobile styles */
     @media (max-width: 768px) {
       .menu-toggle {
-        display: block;
+        display: none !important;
       }
 
       .menu-container {
-        display: none;
         flex-direction: column;
+        align-items: flex-start;
         width: 100%;
-        background-color: #ecfaff;
-        border-top: 1px solid #1C3144;
-      }
-
-      .menu-container.open {
-        display: flex;
       }
 
       .menu-links {
         flex-direction: column;
         width: 100%;
+        margin-top: 10px;
+        background-color: #ecfaff;
       }
 
       .menu-links li {
         border-left: none;
         border-top: 1px solid #1C3144;
-        padding: 12px 20px;
+        padding: 10px;
+        width: 100%;
+        text-align: left;
       }
 
       .menu-links li:first-child {
@@ -141,30 +132,19 @@
       }
 
       .register-button {
-        margin: 12px 20px;
-      }
-
-      .menu-dropdown {
-        flex-direction: column;
-        align-items: stretch;
-        margin-top: 90px;
+        margin-top: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Fixed top menu bar -->
   <nav class="baltic-menu">
     <a href="https://balticsummit.pl/" class="logo-container">
       <img src="https://storage.mlcdn.com/account_image/518224/LFKG7Y7KgPGPDUeZt9PFwlcplOkIxArUGstK30Di.png" alt="Baltic Summit logo" class="baltic-logo" />
       <h1 class="logo-text">Baltic Summit 2025</h1>
     </a>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </nav>
-
-  <!-- Menu shown under bar -->
-  <div class="menu-dropdown">
-    <div class="menu-container" id="menuContainer">
+    <div class="menu-container">
       <ul class="menu-links">
         <li><a href="https://balticsummit.pl/">About</a></li>
         <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
@@ -174,12 +154,18 @@
       </ul>
       <a class="register-button" href="https://balticsummit.pl/tickets2025">Register</a>
     </div>
-  </div>
+  </nav>
 
   <script>
     function toggleMenu() {
-      document.getElementById('menuContainer').classList.toggle('open');
+      document.querySelector('.menu-links').classList.toggle('open');
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const spacer = document.createElement('div');
+      spacer.style.height = '90px';
+      document.body.insertBefore(spacer, document.body.firstChild);
+    });
   </script>
 </body>
 </html>
