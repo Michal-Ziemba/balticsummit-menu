@@ -17,7 +17,6 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px;
-      flex-wrap: wrap;
       border-bottom: 1px solid #1C3144;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
@@ -37,7 +36,6 @@
     .logo-text {
       font-weight: 700;
       font-size: 1.5rem;
-      user-select: none;
       margin: 0;
     }
 
@@ -54,13 +52,11 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .menu-links {
       list-style: none;
       display: flex;
-      gap: 0;
       margin: 0;
       padding: 0;
       align-items: center;
@@ -70,7 +66,6 @@
       padding: 0 16px;
       border-left: 1px solid #1C3144;
       text-align: center;
-      max-width: 120px; /* allows wrapping */
     }
 
     .menu-links li:first-child {
@@ -83,9 +78,13 @@
       text-decoration: none;
       font-weight: 600;
       display: inline-block;
-      white-space: normal; /* allow text wrap */
+      white-space: nowrap; /* default: keep in one line */
+    }
+
+    /* Allow wrapping only for long items */
+    .menu-links a.long-label {
+      white-space: normal;
       line-height: 1.2;
-      text-align: center;
     }
 
     .menu-links a:hover {
@@ -108,7 +107,7 @@
 
     @media (max-width: 768px) {
       .menu-toggle {
-        display: none;
+        display: block;
       }
 
       .menu-container {
@@ -135,7 +134,6 @@
         padding: 10px;
         width: 100%;
         text-align: left;
-        max-width: 100%; /* no restriction on mobile */
       }
 
       .menu-links li:first-child {
@@ -159,8 +157,8 @@
       <ul class="menu-links">
         <li><a href="https://balticsummit.pl/">About</a></li>
         <li><a href="https://balticsummit.pl/speakers2025">Speakers</a></li>
-        <li><a href="https://balticsummit.pl/sessions2025">Workshops & Sessions</a></li>
-        <li><a href="https://balticsummit.pl/sponsors2025">Sponsors & Partners</a></li>
+        <li><a href="https://balticsummit.pl/sessions2025" class="long-label">Workshops & Sessions</a></li>
+        <li><a href="https://balticsummit.pl/sponsors2025" class="long-label">Sponsors & Partners</a></li>
         <li><a href="https://balticsummit.pl/agenda">Agenda</a></li>
         <li><a href="https://balticsummit.pl/shop">Shop</a></li>
         <li><a href="https://dashboard.mailerlite.com/forms/518224/94575616198706627/share">Volunteers</a></li>
@@ -174,7 +172,7 @@
       document.querySelector('.menu-links').classList.toggle('open');
     }
 
-    // Add top spacer to page body to prevent overlap
+    // Spacer so content isn't hidden behind fixed nav
     document.addEventListener('DOMContentLoaded', function () {
       const spacer = document.createElement('div');
       spacer.style.height = '90px';
